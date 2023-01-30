@@ -16,6 +16,8 @@ class Input(pygame.sprite.Sprite):
         # self.speedy = # aqui defina uma velocidade em que o input cairá
         self.speedy = 3
 
+        self.palavra = 'teste'
+
     # def update(self):
         # Atualização da posição da nave
         #Aqui você deve definir a lógica para fazer a caixa cair
