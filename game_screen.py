@@ -28,6 +28,7 @@ def game_screen(window):
 
         # ----- Gera saídas
         window.fill(BLACK)  # Preenche com a cor branca
+        lista_de_imagens.update()
         lista_de_imagens.draw(window)
         fonte = pygame.font.SysFont(None, 30)
         texto = fonte.render(input.palavra, True, (255, 255, 255))

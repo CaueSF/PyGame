@@ -1,4 +1,5 @@
 import pygame
+import random
 
 class Input(pygame.sprite.Sprite):
     def __init__(self, dicionario_de_arquivos):
@@ -10,16 +11,17 @@ class Input(pygame.sprite.Sprite):
         self.image = dicionario_de_arquivos['input']
         self.rect = self.image.get_rect()
         # self.rect.x = # define uma posição para teste (Depois vamos tornar esta posição aleatória)
-        self.rect.x = 3
+        self.rect.x = random.randint(0, (900 - 223))
         # self.rect.y =# defina uma posição para teste
-        self.rect.y = 5
+        self.rect.y = random.randint(-200, -76)
         # self.speedy = # aqui defina uma velocidade em que o input cairá
         self.speedy = 3
 
         self.palavra = 'teste'
  
 
-    # def update(self):
+    def update(self):
+        self.rect.y += 3
         # Atualização da posição da nave
         #Aqui você deve definir a lógica para fazer a caixa cair
 
