@@ -17,6 +17,7 @@ class Input(pygame.sprite.Sprite):
         self.speedy = 3
 
         self.palavra = 'teste'
+ 
 
     # def update(self):
         # Atualização da posição da nave
