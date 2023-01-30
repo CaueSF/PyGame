@@ -15,6 +15,7 @@ def game_screen(window):
     lista_de_imagens = pygame.sprite.Group()
     input = Input(dicionario_de_arquivos)
     lista_de_imagens.add(input)
+    palavra = ''
 
     # ===== Loop principal =====
     while state != DONE:
@@ -23,6 +24,8 @@ def game_screen(window):
         # ----- Trata eventos
         for event in pygame.event.get():
             # ----- Verifica consequências
+            if event.type == pygame.KEYDOWN:
+                palavra += event.unicode
             if event.type == pygame.QUIT:
                 state = DONE
 
@@ -32,10 +35,15 @@ def game_screen(window):
         lista_de_imagens.draw(window)
         fonte = pygame.font.SysFont(None, 30)
         texto = fonte.render(input.palavra, True, (255, 255, 255))
+        resposta = fonte.render(palavra, True, (0, 0, 0))
+        # event.unicode = texto.get_rect()
+        # texto += event.unicode
         x = input.rect.x + 85
         y = input.rect.y + 8
+        x_resposta = input.rect.x + 60
+        y_resposta = input.rect.y + 45
         window.blit(texto, (x, y))
-        
+        window.blit(resposta, (x_resposta, y_resposta))
 
         pygame.display.update()  # Mostra o novo frame para o jogador
 
