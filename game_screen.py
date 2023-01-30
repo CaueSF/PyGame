@@ -1,6 +1,7 @@
 import pygame
 from config import FPS, WIDTH, HEIGHT, BLACK
 from assets import carrega_arquivos
+from sprites import Input
 
 def game_screen(window):
     # Variável para o ajuste de velocidade
@@ -11,6 +12,9 @@ def game_screen(window):
     DONE = 0
     PLAYING = 1
     state = PLAYING
+    lista_de_imagens = pygame.sprite.Group()
+    input = Input(dicionario_de_arquivos)
+    lista_de_imagens.add(input)
 
     # ===== Loop principal =====
     while state != DONE:
@@ -24,6 +28,7 @@ def game_screen(window):
 
         # ----- Gera saídas
         window.fill(BLACK)  # Preenche com a cor branca
+        lista_de_imagens.draw(window)
 
         pygame.display.update()  # Mostra o novo frame para o jogador
 

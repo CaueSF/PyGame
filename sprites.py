@@ -1,16 +1,20 @@
 import pygame
 
-class Caixa(pygame.sprite.Sprite):
+class Input(pygame.sprite.Sprite):
     def __init__(self, dicionario_de_arquivos):
         # Construtor da classe mãe (Sprite).
         pygame.sprite.Sprite.__init__(self)
 
         # TODO 1: Defina as informações abaixo
         # self.image = # Carregue a imagem do input disponível em dicionario_de_arquivos
+        self.image = dicionario_de_arquivos['input']
         self.rect = self.image.get_rect()
         # self.rect.x = # define uma posição para teste (Depois vamos tornar esta posição aleatória)
+        self.rect.x = 3
         # self.rect.y =# defina uma posição para teste
+        self.rect.y = 5
         # self.speedy = # aqui defina uma velocidade em que o input cairá
+        self.speedy = 3
 
     # def update(self):
         # Atualização da posição da nave

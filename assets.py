@@ -12,7 +12,10 @@ def carrega_arquivos():
     #mudando tamanho das imagens
     largura = dicionario_de_arquivos['btn'].get_rect().width * .25
     altura = dicionario_de_arquivos['btn'].get_rect().height * .25
+    dimensoes = (223, 76)
     dicionario_de_arquivos['btn'] = pygame.transform.scale(dicionario_de_arquivos['btn'], (largura, altura))
+
+    dicionario_de_arquivos['input'] = pygame.transform.scale(dicionario_de_arquivos['input'], dimensoes)
 
     dicionario_de_arquivos['btn_hover'] = pygame.image.load(os.path.join(IMG_DIR, 'btn1_hover.png')).convert()
     dicionario_de_arquivos['btn_hover'] = pygame.transform.scale(dicionario_de_arquivos['btn_hover'], (largura, altura))
