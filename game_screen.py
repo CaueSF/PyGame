@@ -14,8 +14,10 @@ def game_screen(window):
     state = PLAYING
     lista_de_imagens = pygame.sprite.Group()
     input = Input(dicionario_de_arquivos)
+    y = input.rect.y + 8
     lista_de_imagens.add(input)
     palavra = ''
+    pontos = 0
 
     # ===== Loop principal =====
     while state != DONE:
@@ -28,6 +30,13 @@ def game_screen(window):
                 palavra += event.unicode
             if event.type == pygame.QUIT:
                 state = DONE
+        
+        if y > 700:
+            if palavra != input.palavra:
+                state = DONE
+            if palavra == input.palavra:
+                pontos += 1
+                print(pontos)
 
         # ----- Gera saídas
         window.fill(BLACK)  # Preenche com a cor branca
@@ -35,6 +44,7 @@ def game_screen(window):
         lista_de_imagens.draw(window)
         fonte = pygame.font.SysFont(None, 30)
         texto = fonte.render(input.palavra, True, (255, 255, 255))
+        print(palavra)
         resposta = fonte.render(palavra, True, (0, 0, 0))
         # event.unicode = texto.get_rect()
         # texto += event.unicode
@@ -46,5 +56,6 @@ def game_screen(window):
         window.blit(resposta, (x_resposta, y_resposta))
 
         pygame.display.update()  # Mostra o novo frame para o jogador
+
 
     return state
