@@ -51,12 +51,14 @@ def game_screen(window):
         texto = fonte.render(input.palavra, True, (255, 255, 255))
         print(palavra)
         resposta = fonte.render(palavra, True, (0, 0, 0))
+        pontuacao = fonte.render(str(pontos), True, (255, 255, 255))
         x = input.rect.x + 75
         y = input.rect.y + 8
-        x_resposta = input.rect.x + 50
+        x_resposta = input.rect.x + 65
         y_resposta = input.rect.y + 45
         window.blit(texto, (x, y))
         window.blit(resposta, (x_resposta, y_resposta))
+        window.blit(pontuacao, (10, 10))
 
         pygame.display.update()  # Mostra o novo frame para o jogador
 
