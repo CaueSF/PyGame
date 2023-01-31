@@ -52,7 +52,7 @@ def game_screen(window):
         print(palavra)
         resposta = fonte.render(palavra, True, (0, 0, 0))
         pontuacao = fonte.render(str(pontos), True, (255, 255, 255))
-        x = input.rect.x + 75
+        x = input.rect.x + 70
         y = input.rect.y + 8
         x_resposta = input.rect.x + 65
         y_resposta = input.rect.y + 45

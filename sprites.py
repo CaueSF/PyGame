@@ -17,9 +17,7 @@ class Input(pygame.sprite.Sprite):
         # self.speedy = # aqui defina uma velocidade em que o input cairá
         self.speedy = 3
 
-#         lista_palavras = ['trompete', 'dessoft', 'cherimoia', 'refrigerante', 'pitoresco', 'concatenar', 'holística', 'epítome',
-# 'sazonal', 'exaurir']
-        self.lista_palavras = ['oi', 'bom dia', 'olá', 'noite', 'pe', 'po', 'lo', 'pl', 'qa']
+        self.lista_palavras = ['trompete', 'dessoft', 'cherimoia', 'refrigerante', 'pitoresco', 'concatenar', 'holística', 'epítome', 'sazonal', 'exaurir']
         self.palavra = random.choice(self.lista_palavras)
     def sorteia_palavra(self):
         self.palavra = random.choice(self.lista_palavras)
