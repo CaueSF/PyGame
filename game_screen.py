@@ -2,6 +2,7 @@ import pygame
 from config import FPS, WIDTH, HEIGHT, BLACK
 from assets import carrega_arquivos
 from sprites import Input
+import random
 
 def game_screen(window):
     # Variável para o ajuste de velocidade
@@ -36,6 +37,10 @@ def game_screen(window):
                 state = DONE
             if palavra == input.palavra:
                 pontos += 1
+                input.rect.x = random.randint(0, (900 - 223))
+                input.rect.y = random.randint(-200, -76)
+                input.sorteia_palavra()
+                palavra = ''
                 print(pontos)
 
         # ----- Gera saídas
@@ -46,11 +51,9 @@ def game_screen(window):
         texto = fonte.render(input.palavra, True, (255, 255, 255))
         print(palavra)
         resposta = fonte.render(palavra, True, (0, 0, 0))
-        # event.unicode = texto.get_rect()
-        # texto += event.unicode
-        x = input.rect.x + 85
+        x = input.rect.x + 75
         y = input.rect.y + 8
-        x_resposta = input.rect.x + 60
+        x_resposta = input.rect.x + 50
         y_resposta = input.rect.y + 45
         window.blit(texto, (x, y))
         window.blit(resposta, (x_resposta, y_resposta))
